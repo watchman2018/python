@@ -2,4 +2,5 @@
 22222
 问渠哪得清如许，唯有源头活水来。
 Git 操作
+先add 然后commit
 先fetch，然后push
