@@ -1,38 +1,54 @@
-﻿Git 操作
-先add 然后commit
-先fetch，然后push
+﻿Git基本操作
+有新学习的操作就加进去，错误的可以修改
 
-git help <verb>
-或者
-git <verb> --help
+连接远程分支
+git remote add origin git@github.test/hellotest.git 
 
-git reset --hard HEAD^ 回退到上一个版本
+克隆远程分支
+git clone 
 
-git reset --hard 3628164 指定回到某个版本，3628164为commit_id前几位
+添加文件
+git add
+git add .
+git add *
 
-git reflog 记录每一次操作
+提交文件，添加注释
+git commit -m ""
 
-git checkout -- file 丢弃工作区的修改
+推送到远程分支
+git push 
 
-git reset HEAD file 把暂存区的修改撤销掉（unstage），重新放回工作区
+如果远程的修改了，需要先fetch或者pull,然后push
+git fetch origin master
+git pull origin master
 
-$ mkdir ~/hello-world    //创建一个项目hello-world
-$ cd ~/hello-world       //打开这个项目
-$ git init             //初始化 
-$ touch README
-$ git add README        //更新README文件
-$ git commit -m 'first commit'     //提交更新，并注释信息“first commit”
-$ git remote add origin git@github.test/hellotest.git     //连接远程github项目  
-$ git push -u origin master     //将本地项目更新到github项目上去
-
-1.删除服务器文件,本地保留
+删除文件或者文件夹
+  1.删除服务器文件,本地保留
 git rm --cached useless.log
 git commit -m "remove file from remote repository"
 git push
 此时github上已经不存在了
 
-2.删除远程useless 文件夹,本地保留
+   2.删除远程useless 文件夹,本地保留
 一定要注意，删除文件夹要使用-r 参数
 git rm --cached -r useless
 git commit -m "remove directory from remote repository"
 git push
+
+寻求帮助
+git help <verb>
+或者
+git <verb> --help
+
+回退到指定版本
+
+git reset --hard HEAD^ 回退到上一个版本
+git reset --hard 3628164 指定回到某个版本，3628164为commit_id前几位
+$ git push origin HEAD --force
+
+查看操作记录
+git reflog 记录每一次操作
+
+初始化某个文件夹
+git init  
+
