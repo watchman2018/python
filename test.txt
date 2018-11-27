@@ -1,6 +1,15 @@
-11111
-22222
-问渠哪得清如许，唯有源头活水来。
-Git 操作
+﻿Git 操作
 先add 然后commit
 先fetch，然后push
+
+1.删除服务器文件,本地保留
+git rm --cached useless.log
+git commit -m "remove file from remote repository"
+git push
+此时github上已经不存在了
+
+2.删除远程useless 文件夹,本地保留
+一定要注意，删除文件夹要使用-r 参数
+git rm --cached -r useless
+git commit -m "remove directory from remote repository"
+git push
