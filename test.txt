@@ -2,6 +2,29 @@
 先add 然后commit
 先fetch，然后push
 
+git help <verb>
+或者
+git <verb> --help
+
+git reset --hard HEAD^ 回退到上一个版本
+
+git reset --hard 3628164 指定回到某个版本，3628164为commit_id前几位
+
+git reflog 记录每一次操作
+
+git checkout -- file 丢弃工作区的修改
+
+git reset HEAD file 把暂存区的修改撤销掉（unstage），重新放回工作区
+
+$ mkdir ~/hello-world    //创建一个项目hello-world
+$ cd ~/hello-world       //打开这个项目
+$ git init             //初始化 
+$ touch README
+$ git add README        //更新README文件
+$ git commit -m 'first commit'     //提交更新，并注释信息“first commit”
+$ git remote add origin git@github.test/hellotest.git     //连接远程github项目  
+$ git push -u origin master     //将本地项目更新到github项目上去
+
 1.删除服务器文件,本地保留
 git rm --cached useless.log
 git commit -m "remove file from remote repository"
